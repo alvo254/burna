@@ -1,5 +1,5 @@
-resource "aws_security_group" "alvo-toast" {
-  name        = "alvo-toast"
+resource "aws_security_group" "burna" {
+  name        = "burna-sg"
   description = "my security group"
  
   vpc_id      = var.vpc_id
@@ -14,7 +14,7 @@ resource "aws_security_group" "alvo-toast" {
       prefix_list_ids  = []
       security_groups  = []
       self             = false
-      ipv6_cidr_blocks = []
+      ipv6_cidr_blocks = ["::/0"]
 
   },
       {
@@ -26,7 +26,7 @@ resource "aws_security_group" "alvo-toast" {
       prefix_list_ids  = []
       security_groups  = []
       self             = false
-      ipv6_cidr_blocks = []
+      ipv6_cidr_blocks = ["::/0"]
 
   },
   {
@@ -59,7 +59,7 @@ resource "aws_security_group" "alvo-toast" {
   ]
 
   tags = {
-    Name = "allow_toast_tls"
+    Name = "allow_burna_tls"
   }
 
 }
