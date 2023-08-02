@@ -8,20 +8,12 @@ resource "aws_instance" "burna_dual_stack" {
 
     # user_data = data.template_file.user_data.rendered
 
-    user_data = <<EOF
-        #! /bin/bash
-            sudo apt-get update
-        	sudo apt install nginx -y 
-        	sudo systemctl start nginx
-        	sudo systemctl enable nginx
-        EOF
 
-    # vpc_security_group_ids = [aws_security_group.alvo-toast.id]
     vpc_security_group_ids = [var.security_group]
 
 
     tags = {
-        Name = "alvin-toast"
+        Name = "burna"
     }
 }
 
@@ -40,5 +32,5 @@ resource "tls_private_key" "RSA" {
 resource "local_file" "alvo-ssh-keys" {
 	# content = tls_private_key.RSA.private_key_pem
 	content = tls_private_key.RSA.private_key_pem
-	filename = "burna.pem"
+	filename = "burna-key.pem"
 }

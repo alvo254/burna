@@ -35,7 +35,7 @@ resource "aws_security_group" "burna" {
       to_port          = 22
       protocol         = "tcp"
       //The /32 means use a single ip
-      cidr_blocks      = ["105.163.158.30/32"] //Please change to your own IP address for this to work
+      cidr_blocks      = ["105.163.0.210/32"] //Please change to your own IP address for this to work
       ipv6_cidr_blocks = []
       prefix_list_ids  = []
       security_groups  = []
