@@ -3,10 +3,9 @@ resource "aws_instance" "burna_dual_stack" {
     instance_type = "t2.micro"
     
     subnet_id = var.subnet
-    //This is interpolation or directive
     key_name = "${aws_key_pair.deployer.key_name}"
 
-    # user_data = data.template_file.user_data.rendered
+    user_data = data.template_file.user_data.rendered
 
 
     vpc_security_group_ids = [var.security_group]
@@ -33,4 +32,8 @@ resource "local_file" "alvo-ssh-keys" {
 	# content = tls_private_key.RSA.private_key_pem
 	content = tls_private_key.RSA.private_key_pem
 	filename = "burna-key.pem"
+}
+
+data "template_file" "user_data" {
+  template = file("${path.module}/do_stuff.sh")
 }

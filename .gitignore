@@ -3,4 +3,4 @@
 terraform.tfstate
 terraform.tfstate.backup
 .terraform/
-burna.pem
+burna-key.pem

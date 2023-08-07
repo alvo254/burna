@@ -54,7 +54,6 @@ resource "aws_security_group" "burna" {
       prefix_list_ids  = []
       security_groups  = []
       self             = false
-
   }
   ]
 
