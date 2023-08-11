@@ -1,8 +1,7 @@
-# burna
 ## Project name
  - Burna
 
-## Features of toast
+## Features of burna
 Creation on a VPC in aws with custom module
 The vpc has a IPV6 CIDR block 
 One of the subnet will be dual stack meaning it has both ipv6 and ipv4
