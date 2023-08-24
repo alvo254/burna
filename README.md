@@ -1,5 +1,5 @@
 ## Project name
- - Burna
+Burna
 
 ## Features of burna
 Creation on a VPC in aws with custom module
