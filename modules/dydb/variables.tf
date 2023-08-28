@@ -2,6 +2,7 @@ variable "key_name" {
   type    = string
   default = "PersonID"
 }
+
 variable "table_name" {
   type    = string
   default = "Persons"
