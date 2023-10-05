@@ -13,3 +13,10 @@ module "ec2" {
     subnet = module.vpc.public_subnet1
     security_group = module.sg.security_group_id
 }
+
+module "eks" {
+  source = "./modules/eks"
+  vpc = module.vpc.vpc_id
+  subnet_id = module.vpc.public_subnet1
+  subnet_id2 = module.vpc.public_subnet_az1
+}
