@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fitnesshero
+  labels:
+    run: fitnesshero
+spec:
+  selector:
+    matchLabels:
+      run: fitnesshero
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: fitnesshero
+    spec:
+      containers:
+      - name: fitnesshero
+        image: alvin254/fitnesshero:latest
+
+#---
+# apiVersion: "v1"
+# kind: "Service"
+# metadata:
+#   name: "fitnesshero-service"
+#   namespace: "default"
+#   labels:
+#     run: "fitnesshero"
+# spec:
+#   ports:
+#   - protocol: "TCP"
+#     port: 80
+#     targetPort: 3000
+#   selector:
+#     run: "fitnesshero"
+#   type: "LoadBalancer"
+#   loadBalancerIP: ""

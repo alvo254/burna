@@ -6,6 +6,10 @@ Creation on a VPC in aws with custom module
 The vpc has a IPV6 CIDR block 
 One of the subnet will be dual stack meaning it has both ipv6 and ipv4
 
+## They are 2 ways you can get kubeconfig to authenticate kubectl
+ - aws eks update-kubeconfig --name <clustername> --region <region>
+ - eksctl utils write-kubeconfig --cluster=<clustername>
+
 
 ## License
 MIT License

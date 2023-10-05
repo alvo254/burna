@@ -13,3 +13,7 @@ output "vpc_id" {
 output "public_subnet1" {
   value = aws_subnet.public_subnet1.id
 }
+
+output "public_subnet_az1" {
+  value = aws_subnet.public_subnet_az1.id
+}
